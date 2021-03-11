@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Predict Aircraft Flight Delay</title>
+  </head>
+
+  <body style="background-color: rgb(140,180,250)">
+  
+      
+  
+  <h1>Anticipate delays and optimize logistic</h1>
+  <p>Flight information:</p>
+  <form action="/predict_delay" method='POST'> <!-- Send the data to the web server to be processed-->
+      
+      <p> Select Month:<input name='month' type='number' min=1 max=12 step=1 /> </p>
+      <p> Select Day Of Month:<input name='day_of_month' type='number' min=1 max=31 step=1 /> </p>
+      <p> Select Day Of Week:<input name='day_of_week' type='number' min=1 max=7 step=1 /> </p>
+      
+      <p> Select Carrier:</p>
+      <select name='carrier'>
+        <option value="AA">American Airlines</option>
+        <option value="B6">Jet Blue Airways</option>
+        <option value="F9">Frontier Airlines</option>
+        <option value="DL">Delta AirLines</option>
+        <option value="NK">Spirit AirLines</option>
+        <option value="UA">United AirLines</option>
+        <option value="AS">Alaska Airlines</option>
+        <option value="WN">Southwest Airlines</option>
+        <option value="OO">SkyWest Airlines</option>
+        <option value="VX">Virgin America</option>
+        <option value="HA">Hawaiian Airlines</option>
+        <option value="EV">ExpressJet Airlines</option> 
+      </select>
+      
+      <p> Select Origin Airoport:</p>
+      <select name='origin'>
+        {{origin_list|safe}} 
+      </select>
+      
+      <p> Select Destination Airoport:</p>
+      <select name='dest'> 
+        {{dest_list|safe}} 
+      </select>
+      
+      <p> Select Departure Time:</p>
+      <select name='dep'> 
+        <option value=0>00:00</option>
+        <option value=1>01:00</option>
+        <option value=2>02:00</option>
+        <option value=3>03:00</option>
+        <option value=4>04:00</option>
+        <option value=5>05:00</option>
+        <option value=6>06:00</option>
+        <option value=7>07:00</option>
+        <option value=8>08:00</option>
+        <option value=9>09:00</option>
+        <option value=10>10:00</option>
+        <option value=11>11:00</option>
+        <option value=12>12:00</option>
+        <option value=13>13:00</option>
+        <option value=14>14:00</option>
+        <option value=15>15:00</option>
+        <option value=16>16:00</option>
+        <option value=17>17:00</option>
+        <option value=18>18:00</option>
+        <option value=19>19:00</option>
+        <option value=20>20:00</option>
+        <option value=21>21:00</option>
+        <option value=22>22:00</option>
+        <option value=23>23:00</option> 
+      </select>
+      
+            
+      <p> <input type ="submit" value="predict delay"/> </p>
+      </form>
+      
+  </body>
+</html>
+
